@@ -1,4 +1,4 @@
-# frontend
+# indg-frontend
 
 ## Project setup
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "indg-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,10 +8,30 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
     "core-js": "^3.8.3",
+    "datatables.net": "^2.0.3",
+    "datatables.net-bs4": "^2.0.3",
+    "datatables.net-bs5": "^2.0.3",
+    "datatables.net-buttons-bs4": "^3.0.1",
+    "datatables.net-buttons-bs5": "^3.0.1",
+    "datatables.net-dt": "^2.0.3",
+    "datatables.net-responsive": "^3.0.0",
+    "datatables.net-responsive-bs5": "^3.0.0",
+    "datatables.net-select": "^2.0.0",
+    "datatables.net-vue3": "^3.0.1",
+    "date-fns": "^3.6.0",
+    "jquery": "^3.7.1",
+    "js-cookie": "^3.0.5",
+    "jszip": "^3.10.1",
+    "pdfmake": "^0.2.10",
     "register-service-worker": "^1.7.2",
+    "sweetalert2": "^11.10.7",
     "vue": "^3.2.13",
+    "vue-data-tables": "^3.4.5",
     "vue-router": "^4.0.3",
+    "vue-sweetalert2": "^5.0.5",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
@@ -23,7 +43,12 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "css-loader": "^6.10.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "vee-validate": "^4.12.6",
+    "vue-style-loader": "^4.1.3"
   }
 }
