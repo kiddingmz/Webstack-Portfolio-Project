@@ -10,7 +10,7 @@
           <div class="page-utilities">
             <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
               <router-link
-                  :to="{ name: 'correspondencia-registo'}"
+                  :to="{ name: 'prescriptionCreate'}"
                   class="btn app-btn-secondary"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
@@ -101,7 +101,7 @@
                                         <td class="cell text-center align-vertical-middle border">
 
                                           <router-link
-                                            :to="{ name: 'correspondencia-actualizar', params: { id: correspondence.id } }"
+                                            :to="{ name: 'prescriptionUpdate', params: { id: correspondence.id } }"
                                             >
                                             <span class="badge text-primary">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

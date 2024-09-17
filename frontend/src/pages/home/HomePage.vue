@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-auto">
                   <div class="card-header-action">
-                    <router-link :to="{ name: 'correspondencia'}">Ver correpondencia</router-link>
+                    <router-link :to="{ name: 'prescription'}">Ver correpondencia</router-link>
                   </div>
                 </div>
               </div>
@@ -60,48 +60,6 @@
           </div>
         </div>
       </div>
-      <div class="row g-4 mb-4">
-        <div class="col-12 col-md-12">
-          <div class="app-card app-card-stats-table h-100 shadow-sm">
-            <div class="app-card-header p-3">
-              <div class="row justify-content-between align-items-center">
-                <div class="col-auto">
-                  <h4 class="app-card-title">Ultimos registos de protocolo</h4>
-                </div>
-                <div class="col-auto">
-                  <div class="card-header-action">
-                    <router-link :to="{ name: 'protocolo'}">Ver protocolo</router-link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="app-card-body p-3 p-lg-4">
-              <div class="table-responsive">
-                <table class="table table-borderless mb-0">
-                  <thead>
-                  <tr>
-                    <th class="  border bg-grey text-secondary">Data</th>
-                    <th class="border bg-grey text-secondary">Número</th>
-                    <th class="  border bg-grey text-secondary">Proveniência</th>
-                    <th class="  border bg-grey text-secondary">Codigo de Classificação</th>
-                    <th class="  border bg-grey text-secondary">Data do Documento</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr v-for="protocol in protocols.data" :key="protocol.id">
-                    <td class="cell border align-vertical-middle text-secondary">{{ fullDateFormatPtBR(protocol.year) }}</td>
-                    <td class="cell border align-vertical-middle text-secondary">{{ protocol.number }}</td>
-                    <td class="cell border align-vertical-middle text-secondary">{{ protocol.provenance }}</td>
-                    <td class="cell border align-vertical-middle text-secondary">{{ protocol.classification_code }}</td>
-                    <td class="cell border align-vertical-middle text-secondary">{{ fullDateFormatPtBR(protocol.doc_date) }}</td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div><!--//table-responsive-->
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -122,12 +80,10 @@ export default {
   data() {
     return {
       correspondences: [],
-      protocols: [],
     }
   },
   mounted() {
     this.initDataCorrespondences();
-    this.initDataProcotols();
   },
   methods: {
     initDataCorrespondences() {
@@ -143,22 +99,6 @@ export default {
             .then((response) => {
               this.correspondences = response.data;
               console.log(response);
-            })
-            .catch((error) => console.log(error.response));
-      })
-    },
-    initDataProcotols() {
-      $(document).ready(() => {
-        axios
-            .get(`${baseURL}/protocol-internal-externals/5/desc`, {
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${Cookie.getToken()}`,
-              }
-            })
-            .then((response) => {
-              this.protocols = response.data;
             })
             .catch((error) => console.log(error.response));
       })
