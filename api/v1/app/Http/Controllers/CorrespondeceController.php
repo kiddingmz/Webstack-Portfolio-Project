@@ -115,7 +115,7 @@ class CorrespondeceController extends Controller
             return $this->sendResponse($correspondence, 'Correspondence created successfully', 201);
         } catch (\Exception $e) {
             DB::rollBack();
-            return $this->sendResponse(null, 'Error while saving correspondence', 500);
+            return $this->sendResponse(null, 'Error while saving prescription', 500);
         }
     }
 
@@ -198,7 +198,7 @@ class CorrespondeceController extends Controller
             return $this->sendResponse($correspondence, 'Correspondence updated successfully');
         } catch (\Exception $e) {
             \Log::error('Error while updating Correspondence: ' . $e->getMessage());
-            return $this->sendResponse(null, 'Error while updating correspondence', 500);
+            return $this->sendResponse(null, 'Error while updating prescription', 500);
         }
     }
 
@@ -222,7 +222,7 @@ class CorrespondeceController extends Controller
             return $this->sendResponse(null, 'Correspondence deleted successfully');
         } catch (\Exception $e) {
             \Log::error('Error while deleting Correspondence: ' . $e->getMessage());
-            return $this->sendResponse(null, 'Error while deleting correspondence', 500);
+            return $this->sendResponse(null, 'Error while deleting prescription', 500);
         }
     }
 }
