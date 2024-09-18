@@ -356,7 +356,7 @@ export default {
       } catch (error) {
         if (error.response){
           if (error.response.status === 422){
-            this.showAlert('Preencha todos campos obrigatorios', 'warning');
+            this.showAlert('Fill in all mandatory fields', 'warning');
           }else {
             this.showAlert('Erro ao atualizar a Correspondência', 'error');
           }
