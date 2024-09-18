@@ -334,23 +334,23 @@ export default {
         const response = await axios.post(`${baseURL}/correspondences`, formData, config);
 
         if (response.status === 201) {
-          this.showAlert('Correspondência criada com sucesso', 'success');
+          this.showAlert('Medical prescription successfully created', 'success');
           const self = this;
           setTimeout(function() {
-            self.$router.push({name: 'correspondencia'});
+            self.$router.push({name: 'prescription'});
           }, 2400);
         }
       } catch (error) {
         if (error.response){
           if (error.response.status === 422){
-            this.showAlert('Preencha todos campos obrigatorios', 'warning');
+            this.showAlert('Fill in all mandatory fields', 'warning');
           }else {
-            this.showAlert('Erro ao criar a Correspondência', 'error');
+            this.showAlert('Error create prescription', 'error');
           }
         }else if (error.request){
-          this.showAlert('Sem resposta do servidor. Por favor, verifique sua conexão de internet.', 'error');
+          this.showAlert('No response from the server. Please check your internet connection.', 'error');
         } else {
-          this.showAlert('Erro ao enviar solicitação. Por favor, tente novamente mais tarde.', 'error');
+          this.showAlert('Error sending request. Please try again later.', 'error');
         }
       }
     },
