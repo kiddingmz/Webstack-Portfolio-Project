@@ -324,18 +324,6 @@ export default {
                       }
                     }
                   ],
-                  language: {
-                    buttons: {
-                      colvis: 'Visibilidade da Coluna',
-                      copy: 'Copiar',
-                      csv: 'CSV',
-                      excel: 'Excel',
-                      pdf: 'PDF',
-                      print: 'Imprimir'
-                    },
-                    search: "Pesquisar:",
-                    lengthMenu: "Mostrar _MENU_ entradas",
-                  },
                   initComplete: function () {
                     $('.buttons-copy').removeClass('btn btn-secondary').addClass('btn app-btn-secondary btn-sm');
                     $('.buttons-csv').removeClass('btn btn-secondary').addClass('btn app-btn-secondary btn-sm');
