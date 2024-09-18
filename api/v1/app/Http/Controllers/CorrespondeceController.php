@@ -157,9 +157,7 @@ class CorrespondeceController extends Controller
      */
     public function update(UpdateCorrespondeceRequest $request, $id)
     {
-
         $validatedData = $request->validate([
-            'pdf_path' => 'nullable|file|mimes:pdf',
             'year' => 'required',
             'reference_number' => 'required',
             'provenance' => 'required',
@@ -173,6 +171,7 @@ class CorrespondeceController extends Controller
             'pdf_path' => 'nullable'
         ]);
 
+        // Encontre a correspondência pelo ID
         $correspondence = Correspondece::find($id);
 
         if (!$correspondence) {
@@ -180,25 +179,25 @@ class CorrespondeceController extends Controller
         }
 
         try {
-            $data = $request->validated(); // Obter os dados validados do request
+            $data = $request->validated(); // Obtenha os dados validados da solicitação
 
-            // Verifica se um arquivo PDF foi enviado
+            // Verifique se um arquivo PDF foi enviado
             if ($request->hasFile('pdf_path')) {
                 $pdfFile = $request->file('pdf_path');
                 $pdfFileName = time() . '_' . $pdfFile->getClientOriginalName();
-                // Salva o arquivo PDF na pasta public
+                // Salve o arquivo PDF na pasta public
                 $pdfFilePath = $pdfFile->move(public_path('pdfs'), $pdfFileName);
-                // Adiciona o caminho do arquivo PDF aos dados da correspondência
+                // Adicione o caminho do arquivo PDF aos dados da correspondência
                 $data['pdf_path'] = '/pdfs/' . $pdfFileName; // Caminho relativo ao diretório public
             }
 
-            // Atualiza os dados da correspondência com os dados recebidos da solicitação
+            // Atualize a instância de correspondência com os dados recebidos
             $correspondence->update($data);
 
             return $this->sendResponse($correspondence, 'Correspondence updated successfully');
         } catch (\Exception $e) {
             \Log::error('Error while updating Correspondence: ' . $e->getMessage());
-            return $this->sendResponse(null, 'Error while updating prescription', 500);
+            return $this->sendResponse(null, 'Error while updating correspondence', 500);
         }
     }
 
