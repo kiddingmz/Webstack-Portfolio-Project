@@ -23,7 +23,7 @@
 
                           <div class="row">
                             <div class="d-flex justify-content-center align-items-center gap-1">
-                              <p><strong>Registo de um novo usuario</strong></p>
+                              <p><strong>Registering a new user</strong></p>
                             </div>
                           </div>
 
@@ -32,7 +32,7 @@
                               <input
                                   name="name" type="email"
                                   class="form-control"
-                                  placeholder="nome"
+                                  placeholder="name"
                                   v-model="name"
                               >
                             </div>
@@ -60,7 +60,7 @@
 
                           <div class="row">
                             <div class="d-flex justify-content-center align-items-center gap-1">
-                              <button type="submit" class="btn app-btn-primary ml-2">Registar</button>
+                              <button type="submit" class="btn app-btn-primary ml-2">Sign up</button>
                             </div>
                           </div>
 
