@@ -154,7 +154,7 @@
           const response = await axios.post(`${baseURL}/login`, dataToSave, config);
 
           if (response.status === 200) {
-            this.showAlert('Login com sucesso.', 'success');
+            this.showAlert('Login successfully.', 'success');
 
             // cookie.set('token', `Bearer ${response.data.data.token}`, { expires: 1 });
             Cookie.setToken(response.data.data.token);
