@@ -3,7 +3,7 @@
   <div class="app-content pt-3 p-md-3 p-lg-4">
     <div class="container-xl">
       <div class="col-auto pt-3">
-        <h1 class="app-page-title">Registo de Correspondencia</h1>
+        <h1 class="app-page-title">Add Medical Prescription</h1>
       </div>
         <form
             novalidate
@@ -22,7 +22,7 @@
                                 <div class="app-card-header p-3">
                                   <div class="row justify-content-between align-items-center">
                                     <div class="col-auto">
-                                      <h4 class="app-card-title">Entrada</h4>
+                                      <h4 class="app-card-title">Entry</h4>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -33,7 +33,7 @@
                                     <div class="app-card-body">
                                       <div class="mb-3 row">
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Numero de Ordem: <small class="text-danger"><strong>*</strong></small></label>
+                                          <label  class="form-label">Order Number: <small class="text-danger"><strong>*</strong></small></label>
                                           <input
                                               name="order_number"
                                               type="text"
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="col-md-12 col-lg-6 mb-3">
                                           <label
-                                              class="form-label">Data Entrada: <small class="text-danger"><strong>*</strong></small></label>
+                                              class="form-label">Entry date: <small class="text-danger"><strong>*</strong></small></label>
 <!--                                          <ErrorMessage name="email" />-->
 
 <!--                                          <Field name="email" type="email" />-->
@@ -68,7 +68,7 @@
                                 <div class="app-card-header p-3">
                                   <div class="row justify-content-between align-items-center">
                                     <div class="col-auto">
-                                      <h4 class="app-card-title">Referência do Documento</h4>
+                                      <h4 class="app-card-title">Document Reference</h4>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -80,7 +80,7 @@
                                     <div class="app-card-body">
                                       <div class="mb-3 row">
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label class="form-label">Número: <small class="text-danger"><strong>*</strong></small></label>
+                                          <label class="form-label">Number: <small class="text-danger"><strong>*</strong></small></label>
                                           <input
                                               name="reference_number"
                                               type="text"
@@ -90,7 +90,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Proveniência: <small class="text-danger"><strong>*</strong></small></label>
+                                          <label  class="form-label">Provenance: <small class="text-danger"><strong>*</strong></small></label>
                                           <input
                                               name="provenance"
                                               type="text"
@@ -100,7 +100,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Código de Classificação: <small class="text-danger"><strong>*</strong></small></label>
+                                          <label  class="form-label">Classification Code: <small class="text-danger"><strong>*</strong></small></label>
                                           <input
                                               name="classification_code"
                                               type="text"
@@ -110,7 +110,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Assunto: <small class="text-danger"><strong>*</strong></small></label>
+                                          <label  class="form-label">Subject: <small class="text-danger"><strong>*</strong></small></label>
                                           <input
                                               name="subject"
                                               type="text"
@@ -120,7 +120,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label class="form-label">Data do Documento <small class="text-danger"><strong>*</strong></small></label>
+                                          <label class="form-label">Document Date <small class="text-danger"><strong>*</strong></small></label>
                                           <input
                                               name="doc_date"
                                               type="date"
@@ -142,7 +142,7 @@
                                 <div class="app-card-header p-3">
                                   <div class="row justify-content-between align-items-center">
                                     <div class="col-auto">
-                                      <h4 class="app-card-title">Outros</h4>
+                                      <h4 class="app-card-title">Others</h4>
                                     </div>
                                     <div class="col-auto">
                                     </div>
@@ -153,7 +153,7 @@
                                     <div class="app-card-body">
                                       <div class="mb-3 row">
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Encaminhado para: </label>
+                                          <label  class="form-label">Forwarded to: </label>
                                           <input
                                               name="forwarded_to"
                                               type="text"
@@ -163,7 +163,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Despacho: </label>
+                                          <label  class="form-label">Dispatch: </label>
                                           <input
                                               name="dispatch"
                                               type="text"
@@ -173,7 +173,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Observações: </label>
+                                          <label  class="form-label">Observations: </label>
                                           <textarea
                                               rows="5"
                                               name="observition"
@@ -183,7 +183,7 @@
                                         </div>
 
                                         <div class="col-md-12 col-lg-6 mb-3">
-                                          <label  class="form-label">Anexar documento: </label>
+                                          <label  class="form-label">Attach document: </label>
                                           <input
                                               ref="file"
                                               accept="application/pdf"
@@ -201,7 +201,7 @@
                             </div>
                           </div>
                       </div>
-                      <button type="submit" class="btn app-btn-primary col-12 col-md-12" >Adicionar Correspondencia</button>
+                      <button type="submit" class="btn app-btn-primary col-12 col-md-12" >Add medical prescription</button>
                     </div>
                   </div>
                 </div>
