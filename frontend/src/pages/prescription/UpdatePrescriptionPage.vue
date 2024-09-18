@@ -319,6 +319,7 @@ export default {
     async updateCorrespondence() {
       try {
         const formData = new FormData();
+        formData.append('_method', 'PUT');
         formData.append('year', this.year === undefined ? '' : this.year);
         formData.append('reference_number', this.reference_number === undefined ? '' : this.reference_number);
         formData.append('provenance', this.provenance === undefined ? '' : this.provenance);
@@ -339,12 +340,12 @@ export default {
         const config = {
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
+            'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer ${Cookie.getToken()}`,
           }
         };
 
-        const response = await axios.put(`${baseURL}/correspondences/${this.correspondences_id}`, formData, config);
+        const response = await axios.post(`${baseURL}/correspondences/${this.correspondences_id}`, formData, config);
 
         if (response.status === 200) {
           this.showAlert('Medical prescription successfully updated', 'success');
