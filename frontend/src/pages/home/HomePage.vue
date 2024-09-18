@@ -45,13 +45,13 @@
                     <td class="cell border align-vertical-middle text-secondary">{{  }}</td>
                   </tr>
 
-                    <tr v-for="correspondence in correspondences.data" :key="correspondence.id">
-                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.order_number }}</td>
-                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.year }}</td>
-                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.number }}</td>
-                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.provenance }}</td>
-                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.classification_code }}</td>
-                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.doc_date }}</td>
+                    <tr v-for="prescription in prescriptions.data" :key="prescription.id">
+                      <td class="cell border align-vertical-middle text-secondary">{{ prescription.order_number }}</td>
+                      <td class="cell border align-vertical-middle text-secondary">{{ prescription.year }}</td>
+                      <td class="cell border align-vertical-middle text-secondary">{{ prescription.reference_number	 }}</td>
+                      <td class="cell border align-vertical-middle text-secondary">{{ prescription.provenance }}</td>
+                      <td class="cell border align-vertical-middle text-secondary">{{ prescription.classification_code }}</td>
+                      <td class="cell border align-vertical-middle text-secondary">{{ prescription.doc_date }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -79,17 +79,17 @@ export default {
   components: {HeaderComponent},
   data() {
     return {
-      correspondences: [],
+      prescriptions: [],
     }
   },
   mounted() {
-    this.initDataCorrespondences();
+    this.initDataPrescriptions();
   },
   methods: {
-    initDataCorrespondences() {
+    initDataPrescriptions() {
       $(document).ready(() => {
         axios
-            .get(`${baseURL}/correspondences/5/desc`, {
+            .get(`${baseURL}/prescriptions/5/desc`, {
               headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export default {
               }
             })
             .then((response) => {
-              this.correspondences = response.data;
+              this.prescriptions = response.data;
               console.log(response);
             })
             .catch((error) => console.log(error.response));

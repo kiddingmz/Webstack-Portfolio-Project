@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCorrespondecesTable extends Migration
+class CreatePrescriptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCorrespondecesTable extends Migration
      */
     public function up()
     {
-        Schema::create('correspondeces', function (Blueprint $table) {
+        Schema::create('prescriptions', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->id();
             $table->date('year')->nullable();
@@ -38,6 +38,6 @@ class CreateCorrespondecesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('correspondeces');
+        Schema::dropIfExists('prescriptions');
     }
 }

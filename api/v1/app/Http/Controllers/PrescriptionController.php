@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCorrespondeceRequest;
-use App\Http\Requests\UpdateCorrespondeceRequest;
+use App\Http\Requests\StorePrescriptionRequest;
+use App\Http\Requests\UpdatePrescriptionRequest;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Correspondece;
+use App\Models\Prescription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class CorrespondeceController extends Controller
+class PrescriptionController extends Controller
 {
 
     private function sendResponse($data, $message = null, $status = 200)
@@ -30,8 +30,8 @@ class CorrespondeceController extends Controller
      */
     public function index()
     {
-        $correspondences = Correspondece::all();
-        return $this->sendResponse($correspondences, 'Correspondences retrieved successfully');
+        $correspondences = Prescription::all();
+        return $this->sendResponse($correspondences, 'Prescriptions retrieved successfully');
     }
 
     public function list($quantity = null, $orderBy = 'asc')
@@ -47,7 +47,7 @@ class CorrespondeceController extends Controller
         }
 
         // Obtenha as correspondências de acordo com a quantidade e a forma de ordenação
-        $correspondencesQuery = Correspondece::query();
+        $correspondencesQuery = Prescription::query();
 
         if ($quantity) {
             $correspondencesQuery->take($quantity);
@@ -57,7 +57,7 @@ class CorrespondeceController extends Controller
 
         $correspondences = $correspondencesQuery->get();
 
-        return $this->sendResponse($correspondences, 'Correspondences retrieved successfully');
+        return $this->sendResponse($correspondences, 'Prescriptions retrieved successfully');
     }
 
 
@@ -74,11 +74,11 @@ class CorrespondeceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCorrespondeceRequest  $request
+     * @param  \App\Http\Requests\StorePrescriptionRequest  $request
      * @return \Illuminate\Http\Response
      */
 
-    public function store(StoreCorrespondeceRequest $request)
+    public function store(StorePrescriptionRequest $request)
     {
         DB::beginTransaction();
         try {
@@ -109,10 +109,10 @@ class CorrespondeceController extends Controller
             }
 
             // Cria a correspondência com os dados recebidos, incluindo o caminho do arquivo PDF
-            $correspondence = Correspondece::create($data);
+            $correspondence = Prescription::create($data);
 
             DB::commit();
-            return $this->sendResponse($correspondence, 'Correspondence created successfully', 201);
+            return $this->sendResponse($correspondence, 'Prescription created successfully', 201);
         } catch (\Exception $e) {
             DB::rollBack();
             return $this->sendResponse(null, 'Error while saving prescription', 500);
@@ -123,27 +123,27 @@ class CorrespondeceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Correspondece  $correspondece
+     * @param  \App\Models\Prescription  $correspondece
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $correspondence = Correspondece::find($id);
+        $correspondence = Prescription::find($id);
 
         if (!$correspondence) {
-            return $this->sendResponse(null, 'Correspondence not found', 404);
+            return $this->sendResponse(null, 'Prescription not found', 404);
         }
 
-        return $this->sendResponse($correspondence, 'Correspondence retrieved successfully');
+        return $this->sendResponse($correspondence, 'Prescription retrieved successfully');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Correspondece  $correspondece
+     * @param  \App\Models\Prescription  $correspondece
      * @return \Illuminate\Http\Response
      */
-    public function edit(Correspondece $correspondece)
+    public function edit(Prescription $correspondece)
     {
         //
     }
@@ -151,11 +151,11 @@ class CorrespondeceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCorrespondeceRequest  $request
-     * @param  \App\Models\Correspondece  $correspondece
+     * @param  \App\Http\Requests\UpdatePrescriptionRequest  $request
+     * @param  \App\Models\Prescription  $correspondece
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCorrespondeceRequest $request, $id)
+    public function update(UpdatePrescriptionRequest $request, $id)
     {
         $validatedData = $request->validate([
             'year' => 'required',
@@ -172,10 +172,10 @@ class CorrespondeceController extends Controller
         ]);
 
         // Encontre a correspondência pelo ID
-        $correspondence = Correspondece::find($id);
+        $correspondence = Prescription::find($id);
 
         if (!$correspondence) {
-            return $this->sendResponse(null, 'Correspondence not found', 404);
+            return $this->sendResponse(null, 'Prescription not found', 404);
         }
 
         try {
@@ -194,9 +194,9 @@ class CorrespondeceController extends Controller
             // Atualize a instância de correspondência com os dados recebidos
             $correspondence->update($data);
 
-            return $this->sendResponse($correspondence, 'Correspondence updated successfully');
+            return $this->sendResponse($correspondence, 'Prescription updated successfully');
         } catch (\Exception $e) {
-            \Log::error('Error while updating Correspondence: ' . $e->getMessage());
+            \Log::error('Error while updating Prescription: ' . $e->getMessage());
             return $this->sendResponse(null, 'Error while updating correspondence', 500);
         }
     }
@@ -205,22 +205,22 @@ class CorrespondeceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Correspondece  $correspondece
+     * @param  \App\Models\Prescription  $correspondece
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id)
     {
-        $correspondence = Correspondece::find($id);
+        $correspondence = Prescription::find($id);
 
         if (!$correspondence) {
-            return $this->sendResponse(null, 'Correspondence not found', 404);
+            return $this->sendResponse(null, 'Prescription not found', 404);
         }
 
         try {
             $correspondence->delete();
-            return $this->sendResponse(null, 'Correspondence deleted successfully');
+            return $this->sendResponse(null, 'Prescription deleted successfully');
         } catch (\Exception $e) {
-            \Log::error('Error while deleting Correspondence: ' . $e->getMessage());
+            \Log::error('Error while deleting Prescription: ' . $e->getMessage());
             return $this->sendResponse(null, 'Error while deleting prescription', 500);
         }
     }

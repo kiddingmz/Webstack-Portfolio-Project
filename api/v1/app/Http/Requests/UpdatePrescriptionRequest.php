@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProtocolInternalExternalRequest extends FormRequest
+class UpdatePrescriptionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,15 +25,14 @@ class UpdateProtocolInternalExternalRequest extends FormRequest
     {
         return [
             'year' => 'required',
-            'number' => 'required',
+            'reference_number' => 'required',
             'provenance' => 'required',
             'classification_code' => 'required',
             'doc_date' => 'required',
             'subject' => 'required',
-            'destination' => 'required',
-            'name_of_expander' => 'required',
-            'date_of_receipt' => 'required',
-            'name_of_recipient' => 'nullable',
+            'forwarded_to' => 'nullable',
+            'dispatch' => 'nullable',
+            'observition' => 'nullable',
         ];
     }
 }
