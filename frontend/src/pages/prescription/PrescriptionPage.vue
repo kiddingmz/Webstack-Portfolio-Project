@@ -406,8 +406,8 @@ export default {
     removeCorrespondence(id) {
       console.log(id);
       //this.showAlert(id, "success");
-      this.showSwalDelete(id, 'Tem a certeza?', "Não poderá reverter esta ação!",
-                    'warning', 'Sim, apague!', 'Apagado com sucesso!',
+      this.showSwalDelete(id, 'He is sure?', "You cannot reverse this action!",
+                    'warning', 'Yes, delete!', 'Deleted successfully!',
                     'success', 'center');
     },
     async deleteCorrespondence(correspondence_id) {
