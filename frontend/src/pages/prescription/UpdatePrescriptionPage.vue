@@ -363,7 +363,7 @@ export default {
         }else if (error.request){
           this.showAlert('No response from the server. Please check your internet connection.', 'error');
         } else {
-          this.showAlert('Erro ao enviar solicitação. Por favor, tente novamente mais tarde.', 'error');
+          this.showAlert('Error sending request. Please try again later.', 'error');
         }
       }
     },
