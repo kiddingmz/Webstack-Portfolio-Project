@@ -347,7 +347,7 @@ export default {
         const response = await axios.put(`${baseURL}/correspondences/${this.correspondences_id}`, formData, config);
 
         if (response.status === 200) {
-          this.showAlert('Correspondência actualizada com sucesso', 'success');
+          this.showAlert('Medical prescription successfully updated', 'success');
           const self = this;
           setTimeout(function() {
             self.$router.push({name: 'correspondencia'});
