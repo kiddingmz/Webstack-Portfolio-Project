@@ -348,7 +348,7 @@ export default {
             this.showAlert('Error create prescription', 'error');
           }
         }else if (error.request){
-          this.showAlert('Sem resposta do servidor. Por favor, verifique sua conexão de internet.', 'error');
+          this.showAlert('No response from the server. Please check your internet connection.', 'error');
         } else {
           this.showAlert('Erro ao enviar solicitação. Por favor, tente novamente mais tarde.', 'error');
         }
