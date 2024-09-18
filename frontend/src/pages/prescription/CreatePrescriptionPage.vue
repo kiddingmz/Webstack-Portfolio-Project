@@ -334,10 +334,10 @@ export default {
         const response = await axios.post(`${baseURL}/correspondences`, formData, config);
 
         if (response.status === 201) {
-          this.showAlert('Correspondência criada com sucesso', 'success');
+          this.showAlert('Medical prescription successfully created', 'success');
           const self = this;
           setTimeout(function() {
-            self.$router.push({name: 'correspondencia'});
+            self.$router.push({name: 'prescription'});
           }, 2400);
         }
       } catch (error) {

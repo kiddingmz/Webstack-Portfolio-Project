@@ -339,7 +339,7 @@ export default {
         const config = {
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': 'application/json',
             'Authorization': `Bearer ${Cookie.getToken()}`,
           }
         };
