@@ -358,7 +358,7 @@ export default {
           if (error.response.status === 422){
             this.showAlert('Fill in all mandatory fields', 'warning');
           }else {
-            this.showAlert('Error updating Correspondence', 'error');
+            this.showAlert('Error updating prescription', 'error');
           }
         }else if (error.request){
           this.showAlert('No response from the server. Please check your internet connection.', 'error');
