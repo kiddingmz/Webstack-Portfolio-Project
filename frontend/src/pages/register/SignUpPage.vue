@@ -123,7 +123,7 @@ export default {
         const response = await axios.post(`${baseURL}/register`, dataToSave, config);
 
         if (response.status === 201) {
-          this.showAlert('Usuário registrado com sucesso. Redicionando em 2s', 'success');
+          this.showAlert('User registered successfully. Rediting in 2s', 'success');
           setTimeout(() => {
             this.$router.push({ name: 'login' });
           }, 2400);
@@ -131,15 +131,15 @@ export default {
       } catch (error) {
         if (error.response) {
           if (error.response.status === 409) {
-            this.showAlert('Usuário já existe', 'error');
+            this.showAlert('User already exists', 'error');
           } else if (error.response.status === 422) {
-            this.showAlert('Erro ao registar usuário. Dados já utilizados', 'error');
+            this.showAlert('Error registering user. Data already used', 'error');
           }
           else {
-            this.showAlert('Erro ao registar usuário. Por favor, tente novamente mais tarde.', 'error');
+            this.showAlert('Error registering user. Please try again later.', 'error');
           }
         } else if (error.request) {
-          this.showAlert('Sem resposta do servidor. Por favor, verifique sua conexão de internet.', 'error');
+          this.showAlert('No response from the server. Please check your internet connection.', 'error');
         } else {
           this.showAlert('Erro ao enviar solicitação. Por favor, tente novamente mais tarde.', 'error');
         }
