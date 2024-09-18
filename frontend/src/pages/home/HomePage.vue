@@ -9,11 +9,11 @@
             <div class="app-card-header p-3">
               <div class="row justify-content-between align-items-center">
                 <div class="col-auto">
-                  <h4 class="app-card-title">Ultimos registos de correpondencia</h4>
+                  <h4 class="app-card-title">Latest medical prescription records</h4>
                 </div>
                 <div class="col-auto">
                   <div class="card-header-action">
-                    <router-link :to="{ name: 'prescription'}">Ver correpondencia</router-link>
+                    <router-link :to="{ name: 'prescription'}">View medical prescription</router-link>
                   </div>
                 </div>
               </div>
@@ -23,16 +23,16 @@
                 <table class="table table-borderless mb-0">
                   <thead>
                     <tr>
-                      <th colspan="2" class="cell border bg-grey text-secondary">Entrada</th>
-                      <th colspan="4" class="cell   border bg-grey text-secondary">Referencia do Documento</th>
+                      <th colspan="2" class="cell border bg-grey text-secondary">Entry</th>
+                      <th colspan="4" class="cell   border bg-grey text-secondary">Document Reference</th>
                     </tr>
                     <tr>
-                      <th class="cell border bg-grey text-secondary">Número de Ordem</th>
-                      <th class="cell   border bg-grey text-secondary">Data</th>
-                      <th class="cell   border bg-grey text-secondary">Número</th>
-                      <th class="cell   border bg-grey text-secondary">Proveniência</th>
-                      <th class="cell   border bg-grey text-secondary">Codigo de Classificação</th>
-                      <th class="cell   border bg-grey text-secondary">Data do Documento</th>
+                      <th class="cell border bg-grey text-secondary">Order Number</th>
+                      <th class="cell   border bg-grey text-secondary">Date</th>
+                      <th class="cell   border bg-grey text-secondary">Number</th>
+                      <th class="cell   border bg-grey text-secondary">Provenance</th>
+                      <th class="cell   border bg-grey text-secondary">Classification Code</th>
+                      <th class="cell   border bg-grey text-secondary">Document Date</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -47,11 +47,11 @@
 
                     <tr v-for="correspondence in correspondences.data" :key="correspondence.id">
                       <td class="cell border align-vertical-middle text-secondary">{{ correspondence.order_number }}</td>
-                      <td class="cell border align-vertical-middle text-secondary">{{ fullDateFormatPtBR(correspondence.year) }}</td>
+                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.year }}</td>
                       <td class="cell border align-vertical-middle text-secondary">{{ correspondence.number }}</td>
                       <td class="cell border align-vertical-middle text-secondary">{{ correspondence.provenance }}</td>
                       <td class="cell border align-vertical-middle text-secondary">{{ correspondence.classification_code }}</td>
-                      <td class="cell border align-vertical-middle text-secondary">{{ fullDateFormatPtBR(correspondence.doc_date) }}</td>
+                      <td class="cell border align-vertical-middle text-secondary">{{ correspondence.doc_date }}</td>
                     </tr>
                   </tbody>
                 </table>

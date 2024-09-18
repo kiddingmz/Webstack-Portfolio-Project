@@ -16,7 +16,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                   <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
                 </svg>
-                Correspondência
+                Prescription
               </router-link>
             </div>
           </div>
@@ -28,7 +28,7 @@
             <div class="app-card app-card-settings shadow-sm p-4">
               <div class="app-card-body">
                 <nav class="orders-table-tab app-nav-tabs nav shadow flex-column flex-sm-row mb-4">
-                  <a class="flex-sm-fill text-sm-center nav-link active " id="orders-all-tab" data-bs-toggle="tab" role="tab" aria-controls="orders-all" aria-selected="true">Correspondencia</a>
+                  <a class="flex-sm-fill text-sm-center nav-link active " id="orders-all-tab" data-bs-toggle="tab" role="tab" aria-controls="orders-all" aria-selected="true">Prescription</a>
                 </nav>
 
                 <div id="" class="row mt-3">
