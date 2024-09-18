@@ -24,9 +24,6 @@
                                   class="form-control" placeholder="email"
                                   v-model="email"
                               >
-                              <div class="error-message" v-if="errors.email">
-                                {{ errors.email }}
-                              </div>
                               <div class="invalid-feedback is-invalid">
                               </div>
                               <div class="invalid-feedback" v-if="errors.email">
