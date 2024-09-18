@@ -350,7 +350,7 @@ export default {
           this.showAlert('Medical prescription successfully updated', 'success');
           const self = this;
           setTimeout(function() {
-            self.$router.push({name: 'correspondencia'});
+            self.$router.push({name: 'prescription'});
           }, 2400);
         }
       } catch (error) {
