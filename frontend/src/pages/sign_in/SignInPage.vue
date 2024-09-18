@@ -61,13 +61,13 @@
 <!--                          </div>-->
                           <div class="row">
                             <div class="d-flex justify-content-center align-items-center gap-1">
-                              <p>Esqueceu a password?</p>
+                              <p>Forgot your password?</p>
                             </div>
                           </div>
 
                           <div class="row">
                             <div class="d-flex justify-content-center align-items-center gap-1">
-                              <button type="submit" class="btn app-btn-primary ml-2">Entrar</button>
+                              <button type="submit" class="btn app-btn-primary ml-2">Login</button>
                             </div>
                           </div>
 
@@ -171,7 +171,7 @@
           if (error.response) {
             // console.log(error.response.status);
             if (error.response.status === 401 || error.response.status === 404)
-              this.showAlert('Credenciais inválidas.', 'error');
+              this.showAlert('Invalid credentials.', 'error');
             else
               this.showAlert('Erro ao enviar solicitação. Por favor, tente novamente mais tarde.', 'error');
           } else if (error.request) {
