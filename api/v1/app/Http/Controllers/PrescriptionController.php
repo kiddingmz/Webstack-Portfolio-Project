@@ -31,7 +31,7 @@ class PrescriptionController extends Controller
     public function index()
     {
         $correspondences = Prescription::all();
-        return $this->sendResponse($correspondences, 'Correspondences retrieved successfully');
+        return $this->sendResponse($correspondences, 'Prescriptions retrieved successfully');
     }
 
     public function list($quantity = null, $orderBy = 'asc')
@@ -57,7 +57,7 @@ class PrescriptionController extends Controller
 
         $correspondences = $correspondencesQuery->get();
 
-        return $this->sendResponse($correspondences, 'Correspondences retrieved successfully');
+        return $this->sendResponse($correspondences, 'Prescriptions retrieved successfully');
     }
 
 
