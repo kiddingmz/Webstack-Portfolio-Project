@@ -50,27 +50,27 @@
                                   <table id="correspondencesTable" class="table app-table-hover mb-0 text-left ">
                                     <thead>
                                       <tr>
-                                        <th colspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Entrada</th>
-                                        <th colspan="5" class="cell border bg-grey align-vertical-middle text-center text-secondary">Referencia do Documento</th>
-                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Encaminhado para</th>
-                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Despacho</th>
-                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Observações</th>
-                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Documento</th>
-                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Acções</th>
+                                        <th colspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Entry</th>
+                                        <th colspan="5" class="cell border bg-grey align-vertical-middle text-center text-secondary">Document Reference</th>
+                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Forwarded to</th>
+                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Dispatch</th>
+                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Observations</th>
+                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Document</th>
+                                        <th rowspan="3" class="cell border bg-grey align-vertical-middle text-center text-secondary">Actions</th>
                                       </tr>
                                       <tr>
-                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Número de Ordem</th>
-                                        <th colspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Ano</th>
-                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Número</th>
-                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Proveniência</th>
-                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Código de Classificação</th>
-                                        <th colspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Data do Documento</th>
+                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Order Number</th>
+                                        <th colspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Year</th>
+                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Number</th>
+                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Provenance</th>
+                                        <th rowspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Classification Code</th>
+                                        <th colspan="2" class="cell border bg-grey align-vertical-middle text-center text-secondary">Document Date</th>
                                       </tr>
                                       <tr>
-                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Mês</th>
-                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Dia</th>
-                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Mês</th>
-                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Ano</th>
+                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Month</th>
+                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Day</th>
+                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Month</th>
+                                        <th class="cell border bg-grey align-vertical-middle text-center text-secondary">Year</th>
                                       </tr>
                                     </thead>
                                     <tbody>
