@@ -345,7 +345,7 @@ export default {
           if (error.response.status === 422){
             this.showAlert('Fill in all mandatory fields', 'warning');
           }else {
-            this.showAlert('Error updating Correspondence', 'error');
+            this.showAlert('Error create prescription', 'error');
           }
         }else if (error.request){
           this.showAlert('Sem resposta do servidor. Por favor, verifique sua conexão de internet.', 'error');
