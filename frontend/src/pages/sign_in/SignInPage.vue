@@ -173,7 +173,7 @@
             if (error.response.status === 401 || error.response.status === 404)
               this.showAlert('Invalid credentials.', 'error');
             else
-              this.showAlert('Erro ao enviar solicitação. Por favor, tente novamente mais tarde.', 'error');
+              this.showAlert('Error sending request. Please try again later.', 'error');
           } else if (error.request) {
             this.showAlert('Sem resposta do servidor. Por favor, verifique sua conexão de internet.', 'error');
           } else {
