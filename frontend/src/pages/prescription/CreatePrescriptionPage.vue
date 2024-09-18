@@ -345,7 +345,7 @@ export default {
           if (error.response.status === 422){
             this.showAlert('Fill in all mandatory fields', 'warning');
           }else {
-            this.showAlert('Erro ao criar a Correspondência', 'error');
+            this.showAlert('Error updating Correspondence', 'error');
           }
         }else if (error.request){
           this.showAlert('Sem resposta do servidor. Por favor, verifique sua conexão de internet.', 'error');
