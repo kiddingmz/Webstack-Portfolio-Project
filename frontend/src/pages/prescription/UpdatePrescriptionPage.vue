@@ -227,7 +227,7 @@ export default {
   components: {HeaderComponent},
   data() {
     return {
-      correspondences: {},
+      prescriptions: {},
       year: '',
       reference_number: '',
       provenance: '',
@@ -242,7 +242,7 @@ export default {
     }
   },
   computed: {
-    correspondences_id() {
+    prescriptions_id() {
       return this.$route.params.id;
     }
   },
@@ -254,11 +254,11 @@ export default {
     // const self = this;
     // $(document).ready(() => {
     //   axios
-    //       .get(`https://indg-api.edinte.com/api/correspondences/${this.correspondences_id}`)
+    //       .get(`https://indg-api.edinte.com/api/prescriptions/${this.prescriptions_id}`)
     //       .then((response) => {
-    //         this.correspondences = response.data.data;
-    //         self.year = this.correspondences.year;
-    //         console.log(this.correspondences);
+    //         this.prescriptions = response.data.data;
+    //         self.year = this.prescriptions.year;
+    //         console.log(this.prescriptions);
     //       })
     //       .catch((error) => console.log(error.response));
     // })
@@ -275,7 +275,7 @@ export default {
       });
     },
     getCorrespondences() {
-      axios.get(`${baseURL}/correspondences/${this.correspondences_id}`, {
+      axios.get(`${baseURL}/prescriptions/${this.prescriptions_id}`, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -302,7 +302,7 @@ export default {
     getCorrespondence() {
         $(document).ready(() => {
           axios
-              .get(`${baseURL}/correspondences/${this.correspondences_id}`, {
+              .get(`${baseURL}/prescriptions/${this.prescriptions_id}`, {
                 headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json',
@@ -310,8 +310,8 @@ export default {
                 }
               })
               .then((response) => {
-                this.correspondences = response.data;
-                console.log(this.correspondences);
+                this.prescriptions = response.data;
+                console.log(this.prescriptions);
               })
               .catch((error) => console.log(error.response));
         })
@@ -345,7 +345,7 @@ export default {
           }
         };
 
-        const response = await axios.post(`${baseURL}/correspondences/${this.correspondences_id}`, formData, config);
+        const response = await axios.post(`${baseURL}/prescriptions/${this.prescriptions_id}`, formData, config);
 
         if (response.status === 200) {
           this.showAlert('Medical prescription successfully updated', 'success');

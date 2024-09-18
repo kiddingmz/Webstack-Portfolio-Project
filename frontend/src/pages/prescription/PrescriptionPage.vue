@@ -74,21 +74,21 @@
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      <tr v-for="correspondence in correspondences.data" :key="correspondence.id">
-                                        <td class="cell border align-vertical-middle text-secondary">{{ correspondence.order_number }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ getMonth(correspondence.year) }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ getDay(correspondence.year) }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ correspondence.reference_number }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ correspondence.provenance }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ correspondence.classification_code }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ getMonth(correspondence.doc_date) }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ getYear(correspondence.doc_date) }}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ correspondence.forwarded_to  === 'undefined' ? ' ' : correspondence.forwarded_to}}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ correspondence.dispatch  === 'undefined' ? ' ' : correspondence.dispatch}}</td>
-                                        <td class="cell border align-vertical-middle text-secondary">{{ correspondence.observition === 'undefined' ? ' ' : correspondence.observition }}</td>
+                                      <tr v-for="prescription in prescriptions.data" :key="prescription.id">
+                                        <td class="cell border align-vertical-middle text-secondary">{{ prescription.order_number }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ getMonth(prescription.year) }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ getDay(prescription.year) }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ prescription.reference_number }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ prescription.provenance }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ prescription.classification_code }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ getMonth(prescription.doc_date) }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ getYear(prescription.doc_date) }}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ prescription.forwarded_to  === 'undefined' ? ' ' : prescription.forwarded_to}}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ prescription.dispatch  === 'undefined' ? ' ' : prescription.dispatch}}</td>
+                                        <td class="cell border align-vertical-middle text-secondary">{{ prescription.observition === 'undefined' ? ' ' : prescription.observition }}</td>
                                         <td class="cell text-center align-vertical-middle border">
 
-                                          <a target="_blank" :href="baseURLFileUploaded+correspondence.pdf_path" v-if="correspondence.pdf_path">
+                                          <a target="_blank" :href="baseURLFileUploaded+prescription.pdf_path" v-if="prescription.pdf_path">
                                             <span class="badge text-center text-danger">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
   <path d="M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606c-.28.337-.498.516-.635.572l-.035.012a.3.3 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647q-.178.037-.356.078a21 21 0 0 0 .5-1.05 12 12 0 0 0 .51.858q-.326.048-.654.114m2.525.939a4 4 0 0 1-.435-.41q.344.007.612.054c.317.057.466.147.518.209a.1.1 0 0 1 .026.064.44.44 0 0 1-.06.2.3.3 0 0 1-.094.124.1.1 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256M8.278 6.97c-.04.244-.108.524-.2.829a5 5 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.5.5 0 0 1 .145-.04c.013.03.028.092.032.198q.008.183-.038.465z"/>
@@ -101,7 +101,7 @@
                                         <td class="cell text-center align-vertical-middle border">
 
                                           <router-link
-                                            :to="{ name: 'prescriptionUpdate', params: { id: correspondence.id } }"
+                                            :to="{ name: 'prescriptionUpdate', params: { id: prescription.id } }"
                                             >
                                             <span class="badge text-primary">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -111,7 +111,7 @@
                                             </span>
                                           </router-link>
 
-                                          <a class="add-row" @click="removeCorrespondence(correspondence.id)">
+                                          <a class="add-row" @click="removeCorrespondence(prescription.id)">
                                             <span class="badge text-center text-danger">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
                                                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
@@ -171,7 +171,7 @@ export default {
   components: {HeaderComponent},
   data() {
     return {
-      correspondences: [],
+      prescriptions: [],
     }
   },
   mounted() {
@@ -181,7 +181,7 @@ export default {
     initTable() {
       $(document).ready(() => {
         axios
-            .get(`${baseURL}/correspondences`, {
+            .get(`${baseURL}/prescriptions`, {
               headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -189,7 +189,7 @@ export default {
               }
             })
             .then((response) => {
-              this.correspondences = response.data;
+              this.prescriptions = response.data;
               this.$nextTick(() => {
                 $("#correspondencesTable").DataTable({
                   dom: '<"d-flex mb-3 input-group-sm form-control-sm"B>' +
@@ -421,7 +421,7 @@ export default {
           }
         };
 
-        const response = await axios.delete(`${baseURL}/correspondences/${correspondence_id}`, config);
+        const response = await axios.delete(`${baseURL}/prescriptions/${correspondence_id}`, config);
         return response.status;
       } catch (error) {
         console.error(error)

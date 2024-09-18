@@ -286,7 +286,7 @@ export default {
       // };
 
       const config = {
-        url: `${baseURL}/correspondences`,
+        url: `${baseURL}/prescriptions`,
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -331,7 +331,7 @@ export default {
             'Authorization': `Bearer ${Cookie.getToken()}`,
           }
         };
-        const response = await axios.post(`${baseURL}/correspondences`, formData, config);
+        const response = await axios.post(`${baseURL}/prescriptions`, formData, config);
 
         if (response.status === 201) {
           this.showAlert('Medical prescription successfully created', 'success');
