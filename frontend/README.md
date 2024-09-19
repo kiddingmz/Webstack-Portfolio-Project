@@ -1,4 +1,4 @@
-# indg-frontend
+# Medical Prescriptions - frontend
 
 ## Project setup
 ```
